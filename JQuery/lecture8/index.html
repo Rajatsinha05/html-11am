@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+</head>
+<body>
+    
+    <form id="form" >
+   <input type="text"   id="name" placeholder="name">
+   <input type="email" id="email" placeholder="email" >
+   <input type="text" id="password" placeholder="password">
+   <input type="submit">
+
+    </form>
+
+
+
+    <hr>
+
+    
+
+    <div id="userdata"></div>
+    
+
+</body>
+
+<script>
+ 
+ $("#form").submit((event)=>{
+    event.preventDefault();
+let name = $("#name").val();
+let password = $("#password").val();
+let email = $("#email").val();
+  
+// $("#user-name").text(name)
+// $("#user-email").text(email)
+// $("#user-password").text(password)
+
+$("#userdata").append(`<p> ${name}</p>`).append(` <p> ${password}</p>`).append(`<p> ${email}</p>`)
+
+ })
+
+</script>
+</html>

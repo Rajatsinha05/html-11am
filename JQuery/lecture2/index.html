@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #div {
+        height: 200px;
+        width: 200px;
+        background-color: aqua;
+        /* display: none; */
+      }
+    </style>
+  </head>
+  <body>
+    <div id="div"></div>
+    <button id="btn">show</button>
+    <button id="hide">hide</button>
+  <input type="text" id="name">
+
+  </body>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+  <script>
+    $("#btn").click(() => {
+      $("#div").show();
+    });
+
+    $("#hide").click(() => {
+      $("#div").hide();
+    });
+    $("#div").mouseleave(() => {
+      $("#div").css({ backgroundColor: "pink", height: "500px" });
+    });
+
+  $("#name").keypress((e)=>{
+    if(e.key=="Enter"){
+      $("#div").css({ backgroundColor: "pink", height: "500px" });
+    }
+  })
+  </script>
+</html>

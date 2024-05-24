@@ -1,0 +1,24 @@
+:root{
+    --bgColor: rgb(52, 50, 50);
+    --textColor:#ece8e8;
+}
+
+.light{
+    --bgColor:white;
+    --textColor:black
+}
+
+
+
+div{
+
+    height: 300px;
+    width: 300px;
+    background-color: var(--bgColor)
+}
+
+p{
+    color: var(--textColor);
+}
+
+

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <style>
+      .swiper-slide {
+        height: 400px !important;
+      }
+      .swiper-slide img {
+        width: 100% !important;
+        height: 100%;
+        object-fit: cover;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img
+            src="https://cdn.pixabay.com/photo/2016/05/05/02/37/sunset-1373171_1280.jpg"
+            alt=""
+          />
+        </div>
+        <div class="swiper-slide">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUJfgzCOU19bZZJRiKn9T7DNVcWq9u-s76VBxgMNiFvrgiGf745TXqGkN6osE-XAJM1D0&usqp=CAU"
+            alt=""
+          />
+        </div>
+        <div class="swiper-slide">
+
+
+            <img src="https://cdn.pixabay.com/photo/2016/05/25/06/25/san-diego-1414078_640.jpg" alt="">
+        </div>
+
+
+        <div class="swiper-slide">
+            <img
+              src="https://cdn.pixabay.com/photo/2016/05/05/02/37/sunset-1373171_1280.jpg"
+              alt=""
+            />
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUJfgzCOU19bZZJRiKn9T7DNVcWq9u-s76VBxgMNiFvrgiGf745TXqGkN6osE-XAJM1D0&usqp=CAU"
+              alt=""
+            />
+          </div>
+          <div class="swiper-slide">
+  
+  
+              <img src="https://cdn.pixabay.com/photo/2016/05/25/06/25/san-diego-1414078_640.jpg" alt="">
+          </div>
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </body>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+    //     spaceBetween: 30,
+    //   centeredSlides: true,
+    //   autoplay: {
+    //     delay: 3500,
+    //     disableOnInteraction: false,
+    //   },
+    //   pagination: {
+    //     el: ".swiper-pagination",
+    //     clickable: true,
+    //   },
+    //   navigation: {
+    //     nextEl: ".swiper-button-next",
+    //     prevEl: ".swiper-button-prev",
+    //   },
+
+    effect: "cards",
+      grabCursor: true,
+    });
+  </script>
+</html>
