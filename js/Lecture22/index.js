@@ -27,11 +27,9 @@ document.querySelector(".form").addEventListener("submit", (e) => {
 
 })
 
-
-
 const handleValidationError = (regex, id, errId, eMsg, sMsg) => {
-    let username = document.getElementById(id).value
-    if (regex.test(username)) {
+    let value = document.getElementById(id)
+    if (regex.test(value.value)) {
         let input = document.getElementById(id)
         input.classList.remove("usernameerr")
         input.classList.add("valid")
@@ -40,11 +38,10 @@ const handleValidationError = (regex, id, errId, eMsg, sMsg) => {
     else {
         let input = document.getElementById(id)
         input.classList.add("usernameerr")
-
         document.getElementById(errId).innerHTML = eMsg
     }
-
 }
+
 const isValidNumber = /^(?:(?:\+|0{0,2})91(\s*[\-]\s*)?|[0]?)?[6789]\d{9}$/
 const validUsername = /^[0-9A-Za-z]{8,26}$/;
 document.querySelector("#username").addEventListener("keypress", () => {
@@ -52,6 +49,6 @@ document.querySelector("#username").addEventListener("keypress", () => {
     handleValidationError(validUsername, "username", "u-err", "not a valid username", "valid username")
 })
 document.querySelector("#number").addEventListener("input", () => {
-    document.getElementById("number").style.outline="none"
+    document.getElementById("number").style.outline = "none"
     handleValidationError(isValidNumber, "number", "n-err", "not a valid number", "valid number")
 })
