@@ -1,11 +1,12 @@
 let products = JSON.parse(localStorage.getItem('products')) || [];
 
 const deleteProduct = (id) => {
-    console.log(id);
+
     products.splice(id, 1);
     uiMaker(products)
     localStorage.setItem("products", JSON.stringify(products))
 }
+
 
 const uiMaker = (data) => {
     document.getElementById("products").innerHTML = ""

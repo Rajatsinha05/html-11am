@@ -1,5 +1,5 @@
 
-let products = JSON.parse(localStorage.getItem('products')) || [];
+let products = JSON.parse(localStorage.getItem('products')) || {};
 
 const handleData = (e) => {
     e.preventDefault();
