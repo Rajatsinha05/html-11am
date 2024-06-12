@@ -1,3 +1,4 @@
+import navbar from "../components/Navbar.js";
 import getValue from "../components/helper.js";
 
 
@@ -18,3 +19,7 @@ const handleData = (e) => {
 
 
 document.getElementById("Userdata").addEventListener("submit", handleData)
+
+
+
+document.getElementById("navbar").innerHTML = navbar()
