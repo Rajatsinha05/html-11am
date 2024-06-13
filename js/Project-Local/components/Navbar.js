@@ -1,5 +1,5 @@
 
-const navbar=()=>{
+const navbar=(login="login",signup="signup")=>{
 
     return `<nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
@@ -39,10 +39,10 @@ const navbar=()=>{
           <a class="nav-link" href="/Project-Local/pages/cart.html">cart</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/Project-Local/pages/Login.html">login</a>
+          <a class="nav-link" href="/Project-Local/pages/Login.html">${login}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/Project-Local/pages/Signup.html">signup</a>
+          <a class="nav-link" href="/Project-Local/pages/Signup.html">${signup}</a>
         </li>
       </ul>
       <form class="d-flex" role="search">
