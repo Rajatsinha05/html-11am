@@ -45,12 +45,13 @@ const navbar=(login="login",signup="signup")=>{
           <a class="nav-link" href="/Project-Local/pages/Signup.html">${signup}</a>
         </li>
       </ul>
-      <form class="d-flex" role="search">
+      <form class="d-flex" role="search" id="searching">
         <input
           class="form-control me-2"
           type="search"
           placeholder="Search"
           aria-label="Search"
+          id="searchValue"
         />
         <button class="btn btn-outline-success" type="submit">Search</button>
       </form>

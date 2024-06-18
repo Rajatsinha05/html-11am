@@ -14,7 +14,8 @@ else {
 }
 
 
-let products = []
+
+let products=JSON.parse(localStorage.getItem("products"))||[]
 
 const handleData = (e) => {
     e.preventDefault();

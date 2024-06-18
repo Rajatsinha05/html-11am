@@ -2,6 +2,9 @@ import navbar from "../components/Navbar.js";
 import getValue from "../components/helper.js";
 let userdetails = JSON.parse(localStorage.getItem("user"));
 document.getElementById("navbar").innerHTML = navbar()
+
+
+
 const handleData = (e) => {
     e.preventDefault();
     let user = {
