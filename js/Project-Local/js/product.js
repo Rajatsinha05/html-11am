@@ -4,6 +4,34 @@ document.getElementById("navbar").innerHTML = navbar()
 
 let proudcts = JSON.parse(localStorage.getItem("products")) || []
 
+let cartList = JSON.parse(localStorage.getItem("cartList")) || []
+
+
+// handle Cart list items and add them to the cart list qty
+
+const isExists = (id) => {
+    let temp = cartList.filter((item) => item.id == id)
+    return temp.length > 0 ? true : false
+}
+
+const handleCartList = (ele) => {
+
+    if (isExists(ele.id)) {
+        
+
+    }
+    else {
+        // ele.qty =1
+        // cartList.push(ele)
+        cartList.push({ ...ele, qty: 1 })
+        console.log(cartList);
+
+    }
+
+}
+
+
+
 
 const Mapper = (data) => {
     document.getElementById("productList").innerHTML = ""
@@ -18,6 +46,7 @@ const Mapper = (data) => {
         category.innerHTML = ele.category
         let btn = document.createElement("button")
         btn.innerHTML = "Buy"
+        btn.addEventListener("click", () => handleCartList(ele))
         let div = document.createElement("div")
         div.append(img, title, price, category, btn)
         document.getElementById("productList").append(div)
@@ -67,13 +96,23 @@ const handleSearchData = (e) => {
 
     let value = getValue("searchValue")
 
-  handleSearch(value)
+    handleSearch(value)
 
 }
 
 
+const handleInput = (e) => {
+    let value = getValue("searchValue")
+    handleSearch(value)
+    // if(e.key=="Enter"){
+    //     let value = getValue("searchValue")
+    //     handleSearch(value)
+    // }
+
+}
 
 
+document.getElementById("searchValue").addEventListener("keypress", handleInput)
 document.getElementById("searching").addEventListener("submit", handleSearchData)
 
 document.getElementById("LTH").addEventListener("click", () => HandleSort("LTH"))
