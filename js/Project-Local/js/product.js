@@ -17,21 +17,25 @@ const isExists = (id) => {
 const handleCartList = (ele) => {
 
     if (isExists(ele.id)) {
-        
 
+        cartList.map((item, i) => {
+            if (item.id == ele.id) {
+                cartList[i].qty += 1
+            }
+        })
+        alert("qty added successfully")
     }
     else {
         // ele.qty =1
         // cartList.push(ele)
         cartList.push({ ...ele, qty: 1 })
-        console.log(cartList);
+        alert("added to the cart")
 
     }
 
+    localStorage.setItem("cartList", JSON.stringify(cartList))
+
 }
-
-
-
 
 const Mapper = (data) => {
     document.getElementById("productList").innerHTML = ""
@@ -56,8 +60,6 @@ const Mapper = (data) => {
 Mapper(proudcts)
 
 
-
-
 const HandleSort = (orderBy) => {
     if (orderBy == "LTH") {
         let temp = proudcts.sort((a, b) => a.price - b.price)
@@ -71,7 +73,6 @@ const HandleSort = (orderBy) => {
     }
 
 }
-
 
 const handleFilter = (category) => {
     let temp = proudcts.filter((ele) => ele.category == category)
