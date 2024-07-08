@@ -1,5 +1,7 @@
-
-export const deleteUser = async (id) => {
+ 
+//  
+//  Delete User
+export const DeleteUser = async (id) => {
     let req = await fetch(`http://localhost:3000/user/${id}`, {
         method: "DELETE",
     })
@@ -19,7 +21,7 @@ const isExists = async (email) => {
 
 }
 
-
+// create a new user
 export const createUser = async (user) => {
 
     if (await isExists(user.email)) {
@@ -55,15 +57,19 @@ export const createUser = async (user) => {
 
 }
 
+// get user
+export const getUser = async () => {
 
-export const getUser = () => {
-
-    fetch("http://localhost:3000/user")
-        .then((req) => req.json())
-        .then((res) => console.log(res))
-        .catch((err) => console.log(err))
+    let req = await fetch("http://localhost:3000/user");
+    let res = await req.json()
+    return res
+    // fetch("http://localhost:3000/user")
+    //     .then((req) => req.json())
+    //     .then((res) => console.log(res))
+    //     .catch((err) => console.log(err))
 }
 
+// login user
 export const login = async (user) => {
     let req = await fetch(` http://localhost:3000/user?email=${user.email}`);
     let res = await req.json()
@@ -79,4 +85,17 @@ export const login = async (user) => {
             alert("password is incorrect");
         }
     }
+}
+
+
+// update patch
+
+export const updateUser=async(id ,data)=>{
+  let req=await  fetch(`http://localhost:3000/user/${id}`, {
+        method: "PATCH",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify(data)
+
+    })
+
 }

@@ -4,7 +4,13 @@
       "id": "44e1",
       "username": "node",
       "email": "node@gmail.com",
-      "password": "node"
+      "password": "nodejs"
+    },
+    {
+      "id": "28a2",
+      "username": "react",
+      "email": "vats@gmail.com",
+      "password": "react"
     }
   ],
   "products": []
